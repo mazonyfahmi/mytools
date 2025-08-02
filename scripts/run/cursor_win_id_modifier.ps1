@@ -587,7 +587,7 @@ function Invoke-CursorInitialization {
                 Write-Host "$GREEN✅ [Success]$NC Deleted file: $file"
             }
             catch {
-                Write-Host "$RED❌ [Error]$NC Failed to delete file $file: $($_.Exception.Message)"
+                Write-Host "$RED❌ [Error]$NC Failed to delete file ${file}: $($_.Exception.Message)"
             }
         } else {
             Write-Host "$YELLOW⚠️  [Skipped]$NC File does not exist, skipping deletion: $file"
@@ -602,7 +602,7 @@ function Invoke-CursorInitialization {
             Write-Host "$GREEN✅ [Success]$NC Cleaned folder contents: $folderToCleanContents"
         }
         catch {
-            Write-Host "$RED❌ [Error]$NC Failed to clean folder $folderToCleanContents: $($_.Exception.Message)"
+            Write-Host "$RED❌ [Error]$NC Failed to clean folder ${folderToCleanContents}: $($_.Exception.Message)"
         }
     } else {
         Write-Host "$YELLOW⚠️  [Skipped]$NC Folder does not exist, skipping cleaning: $folderToCleanContents"
@@ -616,7 +616,7 @@ function Invoke-CursorInitialization {
             Write-Host "$GREEN✅ [Success]$NC Deleted folder: $folderToDeleteCompletely"
         }
         catch {
-            Write-Host "$RED❌ [Error]$NC Failed to delete folder $folderToDeleteCompletely: $($_.Exception.Message)"
+            Write-Host "$RED❌ [Error]$NC Failed to delete folder ${folderToDeleteCompletely}: $($_.Exception.Message)"
         }
     } else {
         Write-Host "$YELLOW⚠️  [Skipped]$NC Folder does not exist, skipping deletion: $folderToDeleteCompletely"
@@ -1050,7 +1050,7 @@ function Modify-MachineCodeConfig {
             }
 
         } catch {
-            Write-Host "$RED❌ [Exception]$NC Exception occurred on attempt $retryCount: $($_.Exception.Message)"
+            Write-Host "$RED❌ [Exception]$NC Exception occurred on attempt ${retryCount}: $($_.Exception.Message)"
             Write-Host "$BLUE💡 [Debug Info]$NC Error type: $($_.Exception.GetType().FullName)"
 
             # Clean up temporary file
